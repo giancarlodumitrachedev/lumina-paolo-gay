@@ -1,5 +1,6 @@
 import { HeroSection } from "@/components/home/hero";
 import { AboutSection } from "@/components/home/about";
+import { ReviewsSection } from "@/components/home/reviews";
 import { StudioSection } from "@/components/home/studio";
 import { LocationSection } from "@/components/home/location";
 import { getDemoParams } from "@/lib/demo-params";
@@ -20,6 +21,7 @@ export default async function HomePage(props: Props) {
         isFemale={params.isFemale} 
         prefix={params.prefix}
       />
+      <ReviewsSection />
       <StudioSection />
       <LocationSection city={params.city} address={params.address} />
     </div>

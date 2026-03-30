@@ -2,11 +2,12 @@
 
 import Image from "next/image";
 import { motion } from "framer-motion";
+import { ArrowRight } from "lucide-react";
 
 const studioImages = [
-  { src: "/Assets/studio-1.webp", alt: "Sala d'attesa Lumnia" },
-  { src: "/Assets/studio-2.webp", alt: "Studio principale Lumnia" },
-  { src: "/Assets/studio-3.webp", alt: "Dettaglio ambiente Lumnia" },
+  { src: "/Assets/studio-1.webp", alt: "Sala d'attesa Lumina" },
+  { src: "/Assets/studio-2.webp", alt: "Studio principale Lumina" },
+  { src: "/Assets/studio-3.webp", alt: "Dettaglio ambiente Lumina" },
 ];
 
 export function StudioSection() {
@@ -18,7 +19,7 @@ export function StudioSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center max-w-3xl mx-auto mb-16"
+          className="text-center max-w-3xl mx-auto mb-10 md:mb-16"
         >
           <h2 className="text-secondary-foreground font-heading text-4xl md:text-5xl font-semibold mb-6">
             Lo Studio
@@ -29,7 +30,11 @@ export function StudioSection() {
           </p>
         </motion.div>
 
-        <div className="flex overflow-x-auto snap-x snap-mandatory px-6 md:px-0 pb-8 mt-12 md:mt-16 -mx-6 md:mx-0 hide-scrollbar md:grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className="md:hidden flex items-center justify-end text-[13px] uppercase tracking-wider text-primary/70 font-semibold mb-4 pr-2">
+          Scorri le foto <ArrowRight className="w-4 h-4 ml-2" />
+        </div>
+
+        <div className="flex overflow-x-auto snap-x snap-mandatory px-6 md:px-0 pb-8 -mx-6 md:mx-0 hide-scrollbar md:grid md:grid-cols-3 gap-6 md:gap-8">
           {studioImages.map((img, idx) => (
             <motion.div
               key={idx}

@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { getDemoParams } from "@/lib/demo-params";
 import { SmartLink } from "@/components/smart-link";
+import { getDemoParams } from "@/lib/demo-params";
 
 export const metadata = { title: "Chi Sono | Lumina Psicologo" };
 
@@ -37,25 +37,20 @@ export default async function ChiSonoPage({
               {params.name} <span className="text-foreground/50 font-normal">| {params.fieldDisplay}</span>
             </h2>
             <p className="mb-4">
-              La mia passione per la psicologia nasce dal desiderio profondo di comprendere l'essere umano in tutte le sue sfaccettature. 
-              Nel corso della mia carriera, ho affinato un approccio terapeutico che integra competenze cliniche rigorose con una reale 
-              ed empatica presenza relazionale.
+              Sono uno psicoterapeuta di 53 anni, ho lavorato in varie comunità, sia di tipo psichiatrico sia per problemi di dipendenze. Ad oggi lavoro anche in un reparto ospedaliero ed in due Centri di Salute Mentale. Sono sposato ed ho un figlio adolescente. 
             </p>
             <p className="mb-4">
-              Mi sono specializzato attraverso anni di studio e pratica clinica, sviluppando una solida esperienza nel trattamento 
-              delle {params.fieldDisplay.toLowerCase()} e delle difficoltà emotive in generale. Il mio obiettivo principale è fornire uno spazio sicuro dove 
-              i pazienti possano esplorare se stessi senza il timore di essere giudicati.
+              Ho una formazione di tipo psicoanalitico che declino per il trattamento dei disturbi contemporanei. Ho esperienza consolidata di conduzione di gruppi terapeutici e di lavoro con adolescenti e con i loro famigliari. 
             </p>
             <p className="mb-8">
-              Lavorando insieme, cercheremo non solo di alleviare il sintomo o il disagio immediato, ma di rintracciare le radici 
-              profonde delle dinamiche interiori, promuovendo un cambiamento autentico e duraturo.
+              Da più di venti anni lavoro come libero professionista ricevendo nel mio studio di Torino in zona &quot;San Paolo&quot;.
             </p>
             
             <SmartLink
               href="/contatti"
-              className="inline-block bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-md text-lg font-medium transition-all shadow-md mt-4 no-underline"
+              className="inline-block bg-primary text-primary-foreground hover:bg-primary/90 px-8 py-3 rounded-md text-lg font-medium transition-all shadow-md no-underline"
             >
-              Prenota un primo colloquio
+              Prenota un consulto in studio
             </SmartLink>
           </div>
         </div>

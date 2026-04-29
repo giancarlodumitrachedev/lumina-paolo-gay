@@ -6,20 +6,22 @@ import { Star, Quote, ArrowRight } from "lucide-react";
 interface Review {
   name: string;
   text: string;
+  date: string;
+  service: string;
 }
 
 const reviews: Review[] = [
   {
-    name: "M. G.",
-    text: "Un percorso che ha letteralmente cambiato la mia prospettiva di vita. Fin dal primo incontro mi sono sentito totalmente accolto, ascoltato in modo profondo e mai giudicato. Consigliatissimo."
+    name: "Pierre",
+    text: "Sono in terapia da circa sette mesi; con lui ho trovato uno spazio sicuro dove potermi esprimere senza giudizio. In questi mesi mi ha aiutato a fare chiarezza, ad ascoltarmi davvero e a ritrovare un equilibrio che pensavo di aver perso. La sua empatia, la presenza costante e il modo delicato ma incisivo con cui guida il percorso hanno fatto davvero la differenza. Il suo approccio è stato gradualmente trasformativo: non mi ha mai imposto risposte, ma mi ha accompagnato nel costruirle insieme. In questi mesi ho visto i miglioramenti concreti nella gestione dei momenti down, nei rapporti interpersonali e nella consapevolezza delle mie emozioni. Professionale e onesto. Il mio percorso è ancora in divenire, ma posso dire di star bene, una volta uscito dalla sua seduta. Consigliato in toto.",
+    date: "29 aprile 2026",
+    service: "Studio di Psicologia e Psicoterapia • colloquio individuale"
   },
   {
-    name: "A. C.",
-    text: "La delicatezza, la professionalità e l'empatia dimostrate sono state fondamentali per superare uno dei momenti più difficili della mia vita. Non potevo fare scelta migliore per me stessa."
-  },
-  {
-    name: "F. R.",
-    text: "Un ambiente sicuro ed estremamente rassicurante. Riuscire a parlare dei propri nodi emotivi non è facile, ma qui ho trovato l'esatta combinazione di competenza e umanità che cercavo."
+    name: "AngHo",
+    text: "Ottima esperienza per me, sia per l'empatia che per la professionalità dimostrata. È stato molto utile e mi ha dato gli stimoli giusti per affrontare quelle che erano le mie problematiche. Lo consiglio sicuramente. Grazie.",
+    date: "6 dicembre 2025",
+    service: "Studio di Psicologia e Psicoterapia • colloquio individuale"
   }
 ];
 
@@ -50,8 +52,7 @@ export function ReviewsSection() {
           Scorri <ArrowRight className="w-4 h-4 ml-2" />
         </div>
 
-        {/* Carousel per Mobile / Grid per Desktop */}
-        <div className="flex overflow-x-auto snap-x snap-mandatory px-6 md:px-0 pb-8 -mx-6 md:mx-0 hide-scrollbar md:grid md:grid-cols-3 gap-6 md:gap-8">
+        <div className="flex overflow-x-auto snap-x snap-mandatory px-6 md:px-0 pb-8 -mx-6 md:mx-0 hide-scrollbar md:grid md:grid-cols-2 gap-6 md:gap-8 max-w-5xl md:mx-auto">
           {reviews.map((review, idx) => (
             <motion.div
               key={idx}
@@ -68,16 +69,26 @@ export function ReviewsSection() {
                     <Star key={i} className="w-5 h-5 fill-accent/80 text-accent/80" />
                   ))}
                 </div>
-                <p className="text-foreground/80 leading-relaxed text-lg font-medium italic mb-8">
+                <p className="text-foreground/80 leading-relaxed text-[15px] font-medium italic mb-8">
                   &quot;{review.text}&quot;
                 </p>
               </div>
-              <div className="flex items-center gap-4 border-t border-border/50 pt-6">
-                <div className="w-10 h-10 rounded-full bg-secondary/30 flex items-center justify-center text-primary font-semibold">
-                  {review.name.charAt(0)}
+              
+              <div className="mt-auto">
+                <div className="flex items-center gap-4 border-t border-border/50 pt-5 mb-3">
+                  <div className="w-10 h-10 rounded-full bg-secondary/30 flex items-center justify-center text-primary font-semibold shrink-0">
+                    {review.name.substring(0, 2).replace(' ', '')}
+                  </div>
+                  <div>
+                    <p className="font-semibold text-foreground tracking-wide text-sm">{review.name}</p>
+                    <p className="text-xs text-foreground/50 mt-0.5">{review.date}</p>
+                  </div>
                 </div>
-                <p className="font-semibold text-foreground tracking-wide">{review.name}</p>
+                <p className="text-[11px] text-foreground/40 leading-tight">
+                  {review.service}
+                </p>
               </div>
+              
             </motion.div>
           ))}
         </div>
